@@ -6,7 +6,8 @@ df = pd.read_csv(
 )
 
 
-# print(df.head())
+print(df.head(5))
 # print(df.info)
 
-print(df.loc[1:30])
+res = df.groupby(["year", "continent"])[["lifeExp", "gdpPercap"]].mean()
+print(res)
